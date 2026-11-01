@@ -1,3 +1,10 @@
 # Memória do Futebol
 
-Jogo da memória feito com HTML e CSS, para aprender programação. Em construção: a lógica em JavaScript vem nas próximas semanas.
+Jogo da memória de futebol feito com HTML, CSS e JavaScript.
+
+**Jogar:** https://jogo-memoria-futebol.vercel.app
+
+
+## Tecnologias
+
+HTML, CSS e JavaScript puro, publicado na Vercel.
