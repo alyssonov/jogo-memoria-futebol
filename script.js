@@ -21,8 +21,8 @@ function clicar(carta) {
     if (primeira === null) {
         primeira = carta;
     } else {
-      const nome1 = primeira.querySelector(".verso").textContent;
-      const nome2 = carta.querySelector(".verso").textContent;
+      const nome1 = primeira.dataset.nome;
+      const nome2 = carta.dataset.nome;
       jogadas++;
       if (nome1 === nome2) {
         acertos++;
@@ -49,12 +49,18 @@ cartas.forEach(function (carta) {
         clicar(carta);
     });
 });
-const nomes = ["Bola", "Chuteira", "Apito", "Luva", "Camisa", "Troféu", "Cartão", "Bandeirinha"];
+const nomes = ["bola", "chuteira", "apito", "luva", "camisa", "trofeu", "cartao", "bandeirinha"];
 function iniciar() {
     const baralho = embaralhar([...nomes, ...nomes]);
     cartas.forEach(function (carta, i) {
         carta.classList.remove("virada");
-        carta.querySelector(".verso").textContent = baralho[i];
+        const verso = carta.querySelector(".verso");
+        verso.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = "imagens/" + baralho[i] + ".png";
+        img.alt = baralho[i];
+        verso.append(img);
+        carta.dataset.nome = baralho[i];
     });
     primeira = null;
     travado = false;

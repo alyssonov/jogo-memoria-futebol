@@ -14,8 +14,8 @@ main {
     max-width: 640px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
 }
 main button {
     width: 100%;
@@ -23,7 +23,7 @@ main button {
     background: none;
     position: relative;
     border: none;
-    border-radius: 12px;
+    border-radius: 16%;
     font-size: 1rem;
     cursor: pointer;
 }
@@ -43,26 +43,29 @@ main button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
-    font-size: 1.2rem;
+    border-radius: 16%;
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
     font-weight: 700;
     backface-visibility: hidden;
+    overflow: hidden;
 }
 .frente {
     background: white;
     color: #0b6e3a;
     font-size: 2rem;
+    border: 2px solid #1b2233;
+    box-sizing: border-box;
 }
 .verso {
-    background: gold;
+    background: transparent;
     color: black;
     transform: rotateY(180deg); 
 }
 .carta.virada .miolo {
     transform: rotateY(180deg);
 }
-@media (min-width: 600px) {
-    main {
-        grid-template-columns: repeat(4, 1fr);
-    }
+.verso img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
