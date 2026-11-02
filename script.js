@@ -1,5 +1,3 @@
-console.log("script carregou");
-
 function embaralhar(lista) {
     const copia = [...lista];
     for (let i = copia.length - 1; i > 0; i--) {
@@ -22,18 +20,14 @@ function clicar(carta) {
     carta.classList.add("virada");
     if (primeira === null) {
         primeira = carta;
-        console.log("primeira carta");
     } else {
       const nome1 = primeira.querySelector(".verso").textContent;
       const nome2 = carta.querySelector(".verso").textContent;
       jogadas++;
       if (nome1 === nome2) {
-        console.log("acertou");
         acertos++;
         if (acertos === 8) {
-            setTimeout(function () {
-                alert("Você venceu em " + jogadas + " jogadas!");
-            }, 600);
+           document.querySelector("#mensagem").textContent = "Você venceu em " + jogadas + " jogadas!";
         }
         primeira = null;
       } else {
@@ -66,6 +60,7 @@ function iniciar() {
     travado = false;
     jogadas = 0;
     acertos = 0;
+    document.querySelector("#mensagem").textContent = "";
     atualizarPlacar();
 }
 document.querySelector("#reiniciar").addEventListener("click", iniciar);
