@@ -1,6 +1,6 @@
 .vscode/
 .env
-node_modules/.claude/reports/
-.claude/approvals/
 node_modules/
+.claude/reports/
+.claude/approvals/
 dist/
